@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :property do
-    address Faker::Address.street_address
-    unit_number Faker::Address.secondary_address
+    address { Faker::Address.street_address }
+    unit_number { Faker::Address.secondary_address }
     price 10_000
     status 'Active'
     description 'Generic Description of property'
