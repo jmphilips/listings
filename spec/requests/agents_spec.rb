@@ -136,4 +136,20 @@ RSpec.describe 'Agents', type: :request do
       end
     end
   end
+
+  describe 'post /agents/:id' do
+    context 'when assigning a property to an agent'
+    it 'should return http status ok' do
+      agent = create(:agent)
+      property = create(:property)
+      property_params = {
+        property_id: property.id
+      }
+      post "/agents/#{agent.id}", params: property_params
+      expect(response).to have_http_status(:ok)
+    end
+
+    # TODO
+    # Write the next two tests for testing responses
+  end
 end
